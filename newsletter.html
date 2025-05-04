@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PURGED – Newsletter</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="Logo PURGED" class="nav-logo-img">
+      <span>PURGED</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="en-savoir-plus.html">En savoir plus</a></li>
+      <li><a href="rejoindre.html">Rejoindre l’univers</a></li>
+      <li><a href="contact.html">Contactez-nous</a></li>
+      <li><a href="newsletter.html">Abonnez-vous</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="main-content">
+<section class="feedback-form">
+  <h2>📧 Inscrivez-vous à la Newsletter de PURGED</h2>
+  <p>Recevez des alertes exclusives, du lore inédit, et soyez averti dès que la purge commence.</p>
+
+  <!-- Form sending data to your Webhook -->
+  <form action="https://hooks.zapier.com/hooks/catch/22741565/2plz00s/" method="POST">
+    <!-- Add your Webhook data -->
+    <input type="hidden" name="form_source" value="newsletter_signup">
+
+    <label for="email">Votre adresse email :</label>
+    <input type="email" name="email" id="email" required placeholder="exemple@email.com">
+
+    <button type="submit">S’inscrire</button>
+  </form>
+</section>
+</div>
+
+<footer class="footer">
+  <div class="footer-content">
+    <img src="images/logo.png" alt="PURGED Logo" class="footer-logo">
+    <p class="footer-text">© 2025 PURGED. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script>
+  document.body.style.opacity = 0;
+  window.addEventListener('load', () => {
+    document.body.style.transition = 'opacity 0.8s ease-in-out';
+    document.body.style.opacity = 1;
+  });
+
+  document.querySelectorAll('a[href]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (!href.startsWith('#') && !href.startsWith('mailto') && !href.startsWith('tel')) {
+        e.preventDefault();
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+          window.location.href = href;
+        }, 400);
+      }
+    });
+  });
+</script>
+</body>
+</html>

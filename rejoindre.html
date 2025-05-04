@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PURGED – Rejoindre l'univers</title>
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="Logo PURGED" class="nav-logo-img">
+      <span>PURGED</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="en-savoir-plus.html">En savoir plus</a></li>
+      <li><a href="rejoindre.html">Rejoindre l’univers</a></li>
+      <li><a href="contact.html">Contactez-nous</a></li>
+              <li><a href="newsletter.html">Abonnez-vous</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+  <div class="page-wrapper">
+    <div class="main-content">
+      <header>
+        <h1>Rejoindre l’univers de PURGED</h1>
+      </header>
+      <section>
+        <h2>🔪 Les rôles disponibles</h2>
+        <ul>
+          <li><strong>Les Purgeurs :</strong> traquent, piègent, éliminent.</li>
+          <li><strong>Les Survivants :</strong> fuient, se cachent, coopèrent (ou pas).</li>
+          <li><strong>Les Observateurs :</strong> gardiens neutres... ou manipulateurs.</li>
+        </ul>
+
+        <h2>📜 Lore interactif</h2>
+        <p>Explorez des extraits de journaux, images de caméras de surveillance, et dossiers top secrets. Chaque élément dévoile une part de vérité sur la nuit de la purge.</p>
+
+        <h2>📦 Le jeu</h2>
+        <p>Disponible prochainement. Préparez-vous... La sirène va retentir. Et personne ne sera en sécurité.</p>
+      </section>
+    </div>
+  </div>
+
+<footer class="footer">
+  <div class="footer-content">
+    <img src="images/logo.png" alt="PURGED Logo" class="footer-logo">
+    <p class="footer-text">© 2025 PURGED. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script>
+  document.body.style.opacity = 0;
+  window.addEventListener('load', () => {
+    document.body.style.transition = 'opacity 0.8s ease-in-out';
+    document.body.style.opacity = 1;
+  });
+
+  document.querySelectorAll('a[href]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (!href.startsWith('#') && !href.startsWith('mailto') && !href.startsWith('tel')) {
+        e.preventDefault();
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+          window.location.href = href;
+        }, 400);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PURGED – Contactez-nous</title>
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="Logo PURGED" class="nav-logo-img" />
+        <span>PURGED</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="en-savoir-plus.html">En savoir plus</a></li>
+        <li><a href="rejoindre.html">Rejoindre l’univers</a></li>
+        <li><a href="contact.html">Contactez-nous</a></li>
+        <li><a href="newsletter.html">Abonnez-vous</a></li>
+      </ul>
+    </div>
+  </nav>
+    <div class="main-content">
+  <section class="feedback-form">
+    <h2>Donnez-nous votre avis</h2>
+    <form action="https://formsubmit.co/jercasabon@csduroy.qc.ca" method="POST">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_next" value="http://purged.infinityfreeapp.com/merci.html">
+      <input type="hidden" name="_template" value="table">
+
+      <label for="name">Votre Nom :</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Votre Email :</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Votre Message :</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+</div>
+
+<footer class="footer">
+  <div class="footer-content">
+    <img src="images/logo.png" alt="PURGED Logo" class="footer-logo">
+    <p class="footer-text">© 2025 PURGED. Tous droits réservés.</p>
+  </div>
+</footer>
+
+  <script>
+    document.body.style.opacity = 0;
+    window.addEventListener('load', () => {
+      document.body.style.transition = 'opacity 0.8s ease-in-out';
+      document.body.style.opacity = 1;
+    });
+
+    document.querySelectorAll('a[href]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (!href.startsWith('#') && !href.startsWith('mailto') && !href.startsWith('tel')) {
+          e.preventDefault();
+          document.body.style.opacity = 0;
+          setTimeout(() => {
+            window.location.href = href;
+          }, 400);
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
