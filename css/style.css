@@ -1,4 +1,4 @@
-/* Global */
+
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
@@ -7,13 +7,13 @@ body {
     flex-direction: column;
     height: 100vh;
     text-align: center;
-    background: linear-gradient(to bottom, #680000, #660000); /* Ensure gradient is applied to entire page */
-    background-size: cover;  /* Ensures the background covers the entire viewport */
-    background-position: center; /* Centers the background */
-    background-attachment: fixed; /* Fixes the background so it doesn't scroll */
+    background: linear-gradient(to bottom, #680000, #660000);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
 }
 
-/* Écran d’intro */
+
 .intro-screen {
     position: fixed;
     top: 0;
@@ -34,7 +34,7 @@ body {
     pointer-events: none;
 }
 
-/* Logo glitch */
+
 .glitch-logo {
     position: relative;
     display: inline-block;
@@ -46,7 +46,7 @@ body {
     filter: drop-shadow(0 0 10px red);
 }
 
-/* Bouton "ENTRER" */
+
 #enterBtn {
     margin-top: 30px;
     padding: 16px 40px;
@@ -99,7 +99,7 @@ body {
     100% { box-shadow: 0 0 10px red; }
 }
 
-/* Main content */
+
 .main-content {
     flex: 1;
     padding: 50px;
@@ -120,7 +120,7 @@ body {
     pointer-events: auto;
 }
 
-/* Texte dans main-content */
+
 .main-content header h1 {
     font-size: 3rem;
     color: red;
@@ -132,7 +132,6 @@ section p {
     margin-bottom: 30px;
 }
 
-/* Boutons dans main-content */
 .main-btn {
     margin-top: 20px;
     padding: 12px 25px;
@@ -159,7 +158,6 @@ section p {
     transform: scale(0.95);
 }
 
-/* Responsive */
 @media screen and (max-width: 768px) {
     .main-content {
         padding: 30px;
@@ -185,7 +183,7 @@ section p {
     }
 }
 
-/* Pages supplémentaires */
+
 .more-page, .join-page {
     background: linear-gradient(to bottom, #000, #330000);
     color: white;
@@ -268,7 +266,7 @@ section p {
     }
 }
 
-/* Navigation */
+
 .navbar {
     background: black;
     border-bottom: 2px solid red;
@@ -326,7 +324,7 @@ section p {
     color: red;
 }
 
-/* Décalage à cause de la navbar fixe */
+
 .page-wrapper {
     padding-top: 100px;
 }
@@ -349,13 +347,13 @@ section p {
 }
 
 
-/* Masquer le contenu principal au départ */
+
 .hidden {
     opacity: 0;
     pointer-events: none;
 }
 
-/* Optionnel : transition d'apparition douce */
+
 .main-content {
     transition: opacity 1s ease;
 }
@@ -426,7 +424,7 @@ section p {
     align-items: center;
     gap: 15px;
     backdrop-filter: blur(2px);
-    background: rgba(0, 0, 0, 0.2); /* Léger flou sombre */
+    background: rgba(0, 0, 0, 0.2); 
     padding: 20px;
     border-radius: 15px;
 }
@@ -484,7 +482,7 @@ section p {
 }
 
 
-/* Styles généraux pour le formulaire de feedback */
+
 .feedback-form {
     color: white;
     padding: 40px;
@@ -495,14 +493,14 @@ section p {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Titre du formulaire */
+
 .feedback-form h2 {
     font-size: 2rem;
     color: red;
     margin-bottom: 30px;
 }
 
-/* Style des champs de formulaire */
+
 .feedback-form label {
     display: block;
     text-align: left;
@@ -511,7 +509,7 @@ section p {
     font-weight: bold;
 }
 
-/* Champs de saisie (text, email, textarea) */
+
 .feedback-form input[type="text"],
 .feedback-form input[type="email"],
 .feedback-form textarea {
@@ -526,7 +524,7 @@ section p {
     transition: border-color 0.3s ease;
 }
 
-/* Focus sur les champs de saisie */
+
 .feedback-form input[type="text"]:focus,
 .feedback-form input[type="email"]:focus,
 .feedback-form textarea:focus {
@@ -534,7 +532,7 @@ section p {
     outline: none;
 }
 
-/* Bouton de soumission */
+
 .feedback-form button {
     padding: 12px 30px;
     background-color: red;
@@ -557,7 +555,7 @@ section p {
     transform: scale(0.95);
 }
 
-/* Style des messages d'erreur ou de succès */
+
 .feedback-form .success,
 .feedback-form .error {
     margin-top: 20px;
@@ -574,7 +572,7 @@ section p {
 }
 
 
-/* Newsletter Form */
+
 .newsletter-section {
     background: linear-gradient(to bottom, #000000, #660000);
     color: white;
@@ -643,7 +641,7 @@ section p {
     transform: scale(0.95);
   }
   
-  /* Responsive */
+
   @media screen and (max-width: 480px) {
     .newsletter-section h2 {
       font-size: 1.6rem;
