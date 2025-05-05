@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     playBtn.addEventListener('click', () => {
       bgMusic.play()
         .then(() => {
-          playBtn.style.display = 'none'; // Cache le bouton une fois la musique activée
+          playBtn.style.display = 'none';
         })
         .catch(err => {
           console.error("Erreur de lecture :", err);
