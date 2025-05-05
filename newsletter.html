@@ -43,13 +43,11 @@
   <h2>📧 Inscrivez-vous à la Newsletter de PURGED</h2>
   <p>Recevez des alertes exclusives, du lore inédit, et soyez averti dès que la purge commence.</p>
 
-  <!-- Form -->
   <form id="newsletter-form">
     <input type="email" id="email" required placeholder="Votre email">
     <button type="submit">S’inscrire</button>
   </form>
 
-  <!-- Success message -->
   <div id="success-message" class="success-message">
     ✅ Merci pour votre inscription à PURGED. Redirection en cours...
   </div>
@@ -64,14 +62,12 @@
 </footer>
 
 <script>
-  // Fade-in on load
   document.body.style.opacity = 0;
   window.addEventListener('load', () => {
     document.body.style.transition = 'opacity 0.8s ease-in-out';
     document.body.style.opacity = 1;
   });
 
-  // Fade-out on navigation
   document.querySelectorAll('a[href]').forEach(link => {
     link.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
@@ -85,7 +81,6 @@
     });
   });
 
-  // Form submission with thank you message + redirect
   document.getElementById("newsletter-form").addEventListener("submit", function(e) {
     e.preventDefault();
 
@@ -98,12 +93,9 @@
     })
     .then(response => {
       if (response.ok) {
-        // Hide the form
         document.getElementById("newsletter-form").style.display = "none";
-        // Show the success message
         const message = document.getElementById("success-message");
         message.style.display = "block";
-        // Redirect after 3 seconds
         setTimeout(() => {
           window.location.href = "index.html";
         }, 3000);
