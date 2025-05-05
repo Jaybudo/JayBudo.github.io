@@ -63,6 +63,26 @@
       }
     });
   });
+
+  document.getElementById("newsletter-form").addEventListener("submit", function(e) {
+  e.preventDefault(); // Stop default form action
+
+  const form = e.target;
+  const email = form.email.value;
+
+  fetch("https://hooks.zapier.com/hooks/catch/22741565/2noi5ge/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({ email })
+  })
+  .then(() => {
+    // Redirect on success
+    window.location.href = "index.html";
+  })
+  .catch(() => {
+    alert("Erreur lors de l'inscription. Veuillez réessayer.");
+  });
+});
 </script>
 </body>
 </html>
