@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PURGED – Newsletter</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .success-message {
+      display: none;
+      margin-top: 20px;
+      color: red;
+      font-size: 1.2em;
+      text-align: center;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
 
@@ -26,14 +41,18 @@
 <div class="main-content">
 <section class="feedback-form">
   <h2>📧 Inscrivez-vous à la Newsletter de PURGED</h2>
-  <p>Recevez des alertes exclusives, du lore inédit, et soyez averti dès que la purge commence.dd</p>
+  <p>Recevez des alertes exclusives, du lore inédit, et soyez averti dès que la purge commence.</p>
 
-  <!-- JS-powered form with redirect -->
+  <!-- Form -->
   <form id="newsletter-form">
     <input type="email" id="email" required placeholder="Votre email">
     <button type="submit">S’inscrire</button>
   </form>
 
+  <!-- Success message -->
+  <div id="success-message" class="success-message">
+    ✅ Merci pour votre inscription à PURGED. Redirection en cours...
+  </div>
 </section>
 </div>
 
@@ -66,9 +85,9 @@
     });
   });
 
-  // Newsletter form submit handling
+  // Form submission with thank you message + redirect
   document.getElementById("newsletter-form").addEventListener("submit", function(e) {
-    e.preventDefault(); // Prevent traditional form action
+    e.preventDefault();
 
     const email = document.getElementById("email").value;
 
@@ -79,7 +98,15 @@
     })
     .then(response => {
       if (response.ok) {
-        window.location.href = "index.html"; // Redirect on success
+        // Hide the form
+        document.getElementById("newsletter-form").style.display = "none";
+        // Show the success message
+        const message = document.getElementById("success-message");
+        message.style.display = "block";
+        // Redirect after 3 seconds
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 3000);
       } else {
         alert("Erreur lors de l'inscription.");
       }
