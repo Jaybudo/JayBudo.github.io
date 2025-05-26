@@ -10,7 +10,7 @@
     .success-message {
       display: none;
       margin-top: 20px;
-      color: red;
+      color: green;
       font-size: 1.2em;
       text-align: center;
       animation: fadeIn 0.5s ease-in-out;
@@ -50,7 +50,7 @@
   </form>
 
   <div id="success-message" class="success-message">
-    ✅ Merci pour votre inscription à PURGED. Redirection en cours... Çe systeme n'es plus fonctionnel du a des API payent.
+    ✅ Merci pour votre inscription à PURGED. Redirection en cours... Ce système n'est plus fonctionnel en raison des API payantes.
   </div>
 </section>
 </div>
@@ -80,6 +80,22 @@
         }, 400);
       }
     });
+  });
+
+  // Handle form submission
+  const form = document.getElementById('newsletter-form');
+  const successMessage = document.getElementById('success-message');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();  // Prevent page reload
+
+    
+    setTimeout(() => {
+      successMessage.style.display = 'block';
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 3000);
+    }, 500);
   });
 </script>
 
