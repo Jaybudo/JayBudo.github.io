@@ -12,7 +12,7 @@ Consultez le site ici : [https://jaybudo.github.io](https://jaybudo.github.io)
 ├── index.html              # Page d'accueil principale
 ├── contact.html            # Page de contact
 ├── en-savoir-plus.html     # Informations supplémentaires
-├── rejoindre.html          # Page pour rejoindre (en français)
+├── rejoindre.html          # Page pour rejoindre l'univers
 ├── newsletter.html         # Page d'inscription à la newsletter
 ├── css/                    # Feuilles de style
 ├── js/                     # Fichiers JavaScript
