@@ -81,34 +81,6 @@
       }
     });
   });
-
-  document.getElementById("newsletter-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const email = document.getElementById("email").value;
-
-    fetch("https://apiway.ai/webhooks/catch/682f63a4cb1ce/webhooks-app", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({ email })
-    })
-    .then(response => {
-      if (response.ok) {
-        document.getElementById("newsletter-form").style.display = "none";
-        const message = document.getElementById("success-message");
-        message.style.display = "block";
-        setTimeout(() => {
-          window.location.href = "index.html";
-        }, 3000);
-      } else {
-        alert("Erreur lors de l'inscription.");
-      }
-    })
-    .catch(error => {
-      console.error("Erreur réseau:", error);
-      alert("Erreur de réseau. Réessayez plus tard.");
-    });
-  });
 </script>
 
 </body>
