@@ -54,24 +54,39 @@
 </div>
 
 <script>
-  const form = document.getElementById('newsletter-form');
-  const successMessage = document.getElementById('success-message');
-  const submitButton = form.querySelector('button');
+  document.body.style.opacity = 0;
+  window.addEventListener('load', () => {
+    document.body.style.transition = 'opacity 0.8s ease-in-out';
+    document.body.style.opacity = 1;
+  });
 
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    submitButton.style.display = 'none';
+  document.querySelectorAll('a[href]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (!href.startsWith('#') && !href.startsWith('mailto') && !href.startsWith('tel')) {
+        e.preventDefault();
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+          window.location.href = href;
+        }, 400);
+      }
+    });
+  });
+
+  document.getElementById("newsletter-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    document.getElementById("newsletter-form").style.display = "none";
+    const message = document.getElementById("success-message");
+    message.style.display = "block";
 
     setTimeout(() => {
-      successMessage.style.display = 'block';
-      
-      setTimeout(() => {
-        window.location.href = "index.html";
-      }, 7000);
-    }, 500);
+      window.location.href = "index.html";
+    }, 3000);
   });
 </script>
+
 
 
 </body>
