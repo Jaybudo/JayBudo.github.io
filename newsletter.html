@@ -44,60 +44,35 @@
   <h2>📧 Inscrivez-vous à la Newsletter de PURGED</h2>
   <p>Recevez des alertes exclusives, du lore inédit, et soyez averti dès que la purge commence.</p>
 
-  <form id="newsletter-form">
-    <input type="email" id="email" required placeholder="Votre email">
-    <button type="submit">S’inscrire</button>
-  </form>
+<form id="newsletter-form">
+  <input type="email" id="email" required placeholder="Votre email">
+  <button type="submit">S’inscrire</button>
+</form>
 
-  <div id="success-message" class="success-message">
-    ✅ Merci pour votre inscription à PURGED. Redirection en cours... Ce système n'est plus fonctionnel en raison des API payantes.
-  </div>
-</section>
+<div id="success-message" class="success-message">
+  ✅ Merci pour votre inscription à PURGED. Redirection en cours... Ce système n'est plus fonctionnel en raison des API payantes.
 </div>
 
-<footer class="footer">
-  <div class="footer-content">
-    <img src="images/logo.png" alt="PURGED Logo" class="footer-logo">
-    <p class="footer-text">© 2025 PURGED. Tous droits réservés.</p>
-  </div>
-</footer>
-
 <script>
-  document.body.style.opacity = 0;
-  window.addEventListener('load', () => {
-    document.body.style.transition = 'opacity 0.8s ease-in-out';
-    document.body.style.opacity = 1;
-  });
-
-  document.querySelectorAll('a[href]').forEach(link => {
-    link.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
-      if (!href.startsWith('#') && !href.startsWith('mailto') && !href.startsWith('tel')) {
-        e.preventDefault();
-        document.body.style.opacity = 0;
-        setTimeout(() => {
-          window.location.href = href;
-        }, 400);
-      }
-    });
-  });
-
   const form = document.getElementById('newsletter-form');
   const successMessage = document.getElementById('success-message');
   const submitButton = form.querySelector('button');
 
   form.addEventListener('submit', function(event) {
     event.preventDefault();
+    
+    submitButton.style.display = 'none';
 
-  submitButton.style.display = 'none';
-  setTimeout(() => {
+    setTimeout(() => {
       successMessage.style.display = 'block';
+      
       setTimeout(() => {
         window.location.href = "index.html";
       }, 7000);
     }, 500);
   });
 </script>
+
 
 </body>
 </html>
